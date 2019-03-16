@@ -25,7 +25,11 @@ namespace SimpleCompiler
 
                 var b = parser.Parse();
                 var r = parser.root;
-                Console.WriteLine(r);
+                // Console.WriteLine(r);
+                var printv = new PrettyPrintVisitor(true);
+                r.Visit(printv);
+                Console.WriteLine(printv.Text);
+
                 if (!b)
                     Console.WriteLine("Ошибка");
                 else
