@@ -37,6 +37,16 @@ namespace ProgramTree
         }
         public override string ToString() => Num.ToString();
     }
+    public class BoolNode : ExprNode
+    {
+        public bool Value { get; set; }
+        public BoolNode(bool value) { Value = value; }
+        public override void Visit(Visitor v)
+        {
+            v.VisitBoolNode(this);
+        }
+        public override string ToString() => Value.ToString();
+    }
 
     public class BinOpNode : ExprNode
     {

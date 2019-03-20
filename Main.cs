@@ -67,6 +67,9 @@ namespace SimpleCompiler
                     var sameminusv = new SameMinusOptVisitor();
                     parser.root.Visit(sameminusv);
 
+                    var whilefalsev = new WhileFalseOptVisitor();
+                    parser.root.Visit(whilefalsev);
+
                     printv = new PrettyPrintVisitor(true);
                     r.Visit(printv);
                     Console.WriteLine(printv.Text);
