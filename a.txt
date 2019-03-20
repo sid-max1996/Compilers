@@ -1,6 +1,7 @@
+a = k - k;
 a = 2 * (b + c);
 if (a) {
-  a = 2;
+  a = c - c;
 }
 else
 for (a=1 to 5)

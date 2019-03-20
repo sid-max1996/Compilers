@@ -61,6 +61,16 @@ namespace SimpleCompiler
                     parser.root.Visit(maxdeepv);
                     Console.WriteLine(maxdeepv.Result);
 
+                    var parentv = new FillParentVisitor();
+                    parser.root.Visit(parentv);
+
+                    var sameminusv = new SameMinusOptVisitor();
+                    parser.root.Visit(sameminusv);
+
+                    printv = new PrettyPrintVisitor(true);
+                    r.Visit(printv);
+                    Console.WriteLine(printv.Text);
+
                     //var pp = new PrettyPrintVisitor();
                     //parser.root.Visit(pp);
                     //Console.WriteLine(pp.Text);
