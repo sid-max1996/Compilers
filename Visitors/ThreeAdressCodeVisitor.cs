@@ -8,7 +8,7 @@ namespace SimpleLang.Visitors
 {
     class ThreeAdressCodeVisitor : AutoVisitor
     {
-        private LinkedList<Five> fives = new LinkedList<Five>;
+        private LinkedList<Five> fives = new LinkedList<Five> ();
         private int tmpcount = 0;
         private int lblcount = 0;
         public override void VisitAssignNode(AssignNode a)
